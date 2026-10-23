@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f2e9" />
+  <title>Moss & Mug — Find your way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Moss and Mug home">
+        <span class="brand-mark" aria-hidden="true">m<span>·</span></span>
+        <span class="brand-name">moss <i>&</i> mug</span>
+      </a>
+      <div class="topbar-right"><span class="open-dot"></span><span>We’re open</span><span class="divider"></span><button class="help-button" id="helpButton" type="button">Need a hand?</button></div>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> A LITTLE PLACE TO LAND</div>
+      <h1>Make yourself<br /><em>at home.</em></h1>
+      <p class="intro-copy">A seat by the window? The little reading nook?<br class="desktop-break" /> We’ll help you find your corner.</p>
+    </section>
+
+    <section class="wayfinder" aria-label="Cafe wayfinding">
+      <div class="map-panel">
+        <div class="map-topline"><div><span class="live-pulse"></span><span id="mapStatus">YOUR CAFE, AT A GLANCE</span></div><span class="map-scale">GROUND FLOOR&nbsp; · &nbsp;01</span></div>
+        <div class="map-wrap">
+          <svg class="floor-map" viewBox="0 0 760 470" role="img" aria-labelledby="mapTitle mapDesc">
+            <title id="mapTitle">Map of Moss &amp; Mug cafe</title><desc id="mapDesc">A top down map showing the entrance, counter, window seats, communal table, reading nook, restroom, and garden patio.</desc>
+            <defs>
+              <pattern id="tile" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#e7e2d6" stroke-width=".7"/></pattern>
+              <pattern id="wood" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M0 3h12M0 9h12" stroke="#dcc8a7" stroke-width=".7" opacity=".55"/></pattern>
+              <filter id="soft"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#53644f" flood-opacity=".12"/></filter>
+            </defs>
+            <!-- patio -->
+            <rect x="555" y="35" width="170" height="172" rx="16" fill="#e5ecd9" stroke="#bac6a8" stroke-width="1.5" stroke-dasharray="4 5" />
+            <text x="640" y="55" text-anchor="middle" class="map-small-label">THE GARDEN</text>
+            <path d="M585 79q13-22 27 0q-14 21-27 0M690 95q13-22 27 0q-14 21-27 0M580 161q13-22 27 0q-14 21-27 0M693 159q13-22 27 0q-14 21-27 0" fill="#a4b68e"/>
+            <circle cx="633" cy="115" r="19" fill="#f8f5ec" stroke="#a7b692"/><circle cx="633" cy="115" r="5" fill="#c8b28d"/><path d="M633 96v38m-19-19h38" stroke="#a7b692" stroke-width="2"/>
+            <path d="M633 207v-19h-15" class="patio-path"/>
+            <!-- cafe room -->
+            <rect x="35" y="35" width="500" height="390" rx="15" fill="#fbf9f3" stroke="#9b9a85" stroke-width="2" filter="url(#soft)" />
+            <rect x="48" y="48" width="474" height="365" rx="8" fill="url(#tile)" opacity=".65"/>
+            <!-- counter -->
+            <rect x="63" y="56" width="170" height="60" rx="9" fill="#d8c4a2" stroke="#bba783"/>
+            <rect x="63" y="56" width="170" height="60" rx="9" fill="url(#wood)" opacity=".45"/>
+            <text x="148" y="91" text-anchor="middle" class="map-label">ORDER HERE</text>
+            <circle cx="216" cy="86" r="10" fill="#f5efe2" stroke="#bba783"/><path d="M211 86h10m-5-5v10" stroke="#8d785c" stroke-width="1.5"/>
+            <!-- window ledge and seats -->
+            <rect x="255" y="48" width="260" height="12" rx="6" fill="#bbd0cc"/>
+            <text x="385" y="78" text-anchor="middle" class="map-small-label">WINDOW SEATS</text>
+            <g class="seat" data-spot="window"><rect x="278" y="87" width="62" height="40" rx="11"/><circle cx="309" cy="107" r="9"/></g>
+            <g class="seat" data-spot="window"><rect x="359" y="87" width="62" height="40" rx="11"/><circle cx="390" cy="107" r="9"/></g>
+            <g class="seat" data-spot="window"><rect x="440" y="87" width="62" height="40" rx="11"/><circle cx="471" cy="107" r="9"/></g>
+            <!-- long table -->
+            <rect x="208" y="176" width="194" height="62" rx="12" fill="#d4b48a" stroke="#b79970"/>
+            <rect x="219" y="184" width="172" height="46" rx="7" fill="url(#wood)" opacity=".6"/>
+            <text x="305" y="169" text-anchor="middle" class="map-small-label">COMMUNAL TABLE</text>
+            <g class="chair"><circle cx="233" cy="162" r="8"/><circle cx="274" cy="162" r="8"/><circle cx="316" cy="162" r="8"/><circle cx="357" cy="162" r="8"/><circle cx="233" cy="252" r="8"/><circle cx="274" cy="252" r="8"/><circle cx="316" cy="252" r="8"/><circle cx="357" cy="252" r="8"/></g>
+            <!-- nook -->
+            <path d="M437 151h73v127h-73q-16 0-16-16v-95q0-16 16-16" fill="#e8ddcf" stroke="#c6b7a6"/>
+            <text x="468" y="171" text-anchor="middle" class="map-small-label">READING</text><text x="468" y="184" text-anchor="middle" class="map-small-label">NOOK</text>
+            <path d="M442 218q22-25 46 0v26h-46z" fill="#a4b18f"/><rect x="453" y="199" width="28" height="16" rx="7" fill="#f7f2e9" stroke="#b7a98f"/>
+            <!-- restroom -->
+            <rect x="65" y="152" width="94" height="88" rx="8" fill="#e5e8df" stroke="#bdc2b5"/>
+            <text x="112" y="170" text-anchor="middle" class="map-small-label">RESTROOM</text>
+            <circle cx="112" cy="202" r="16" fill="#fbf9f3" stroke="#9da795"/><path d="M112 193v18m-8-9h16" stroke="#85927d" stroke-width="1.6"/>
+            <!-- plant and lounge -->
+            <path d="M92 292q-24-24-32 0q13 24 32 0m0 0q24-24 32 0q-13 24-32 0m0 0v24" fill="#9eaf8b"/>
+            <rect x="147" y="291" width="119" height="53" rx="19" fill="#c5a8a0" stroke="#ad8d85"/><path d="M165 299v37m84-37v37" stroke="#b18f87" stroke-width="2"/><text x="206" y="362" text-anchor="middle" class="map-small-label">LOUNGE</text>
+            <circle cx="320" cy="324" r="22" fill="#d7c6a9" stroke="#b7a789"/><circle cx="320" cy="324" r="5" fill="#ad9874"/>
+            <g class="plant"><circle cx="490" cy="345" r="17"/><path d="M490 345q-14-18-19-8q3 12 19 8m0 0q14-18 19-8q-3 12-19 8m0 0q-7 18 0 19q8-8 0-19"/></g>
+            <!-- entrance -->
+            <path d="M267 425h61" stroke="#fbf9f3" stroke-width="7"/><path d="M267 425v-39a39 39 0 0 1 39 39" fill="none" stroke="#a1a38d" stroke-width="2"/>
+            <text x="297" y="453" text-anchor="middle" class="map-small-label">YOU ARE HERE</text>
+            <circle cx="297" cy="409" r="9" class="you-dot"/><circle cx="297" cy="409" r="16" class="you-halo"/>
+            <!-- route overlay -->
+            <path id="routePath" class="route-path" d="" />
+            <circle id="destinationPin" class="destination-pin" cx="0" cy="0" r="0" />
+            <!-- doors to garden -->
+            <path d="M535 113h-7m7 38h-7" stroke="#fbf9f3" stroke-width="5"/>
+          </svg>
+          <div class="map-compass"><span>N</span><svg viewBox="0 0 18 26" aria-hidden="true"><path d="M9 1L17 25 9 20 1 25z" fill="#65735c"/></svg></div>
+          <div class="map-controls"><button id="zoomOut" aria-label="Zoom out" type="button">−</button><span id="zoomLevel">100%</span><button id="zoomIn" aria-label="Zoom in" type="button">+</button></div>
+        </div>
+        <div class="map-legend"><span><i class="legend-dot legend-you"></i>You are here</span><span><i class="legend-line"></i>Your route</span><span class="legend-note">Illustrated floor plan · not to scale</span></div>
+      </div>
+
+      <aside class="guide-panel">
+        <div class="guide-heading"><div><span class="step-label">LET’S GET YOU SETTLED</span><h2>Where to?</h2></div><span class="tiny-leaf">✳</span></div>
+        <label class="field-label" for="destination">I’m looking for</label>
+        <div class="select-wrap"><select id="destination" aria-label="Choose a cafe destination"><option value="window">A window seat</option><option value="counter">The order counter</option><option value="communal">The communal table</option><option value="nook">The reading nook</option><option value="restroom">The restroom</option><option value="garden">The garden patio</option><option value="lounge">The lounge</option></select><span class="select-chevron">⌄</span></div>
+        <label class="accessible-toggle"><input id="accessible" type="checkbox" /><span class="toggle-track"><span></span></span><span>Step-free route</span><span class="info" title="We'll avoid steps and choose the widest path.">i</span></label>
+        <button class="route-button" id="routeButton" type="button"><span>Show me the way</span><span class="button-arrow">↗</span></button>
+        <div id="directions" class="directions" aria-live="polite">
+          <div class="direction-empty"><span class="empty-icon">↗</span><p>Your little adventure starts here.</p><span>Choose a spot and we’ll point you there.</span></div>
+        </div>
+        <div class="tip-card"><span class="tip-icon">☼</span><p><strong>A good thing to know</strong><br /><span>Water and little treats are just past the counter. Help yourself.</span></p></div>
+      </aside>
+    </section>
+
+    <footer class="footer"><span>TAKE YOUR TIME. STAY A WHILE.</span><span class="footer-flourish">✳ &nbsp; Made for slow mornings</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
